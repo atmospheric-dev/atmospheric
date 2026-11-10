@@ -3,17 +3,23 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Atmospheric — сообщество и блог о тяжёлой и тёмной музыке</title>
+<title>Atmospheric — сообщество о тяжёлой и тёмной музыке</title>
 <meta name="description" content="Atmospheric — сообщество и блог о блэк-метале, сладже, пост- и дум-метале, дарк-фолке и дарк-эмбиенте. Обзоры релизов, заметки с концертов, подборки и печатный журнал.">
+<meta name="theme-color" content="#0d0c0b">
+
+<!-- ===== ИКОНКА: файл favicon.png рядом с index.html ===== -->
+<link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+
 <style>
   /* ====== ЦВЕТА: меняй только здесь ====== */
   :root{
-    --bg:        #0d0c0b;   /* фон */
-    --bg-soft:   #161412;   /* фон карточек */
-    --line:      #2b2724;   /* линии и рамки */
-    --text:      #ddd8d0;   /* основной текст */
-    --text-dim:  #8a837a;   /* второстепенный текст */
-    --accent:    #b08e5a;   /* латунь — акцент */
+    --bg:        #0d0c0b;
+    --bg-soft:   #161412;
+    --line:      #2b2724;
+    --text:      #ddd8d0;
+    --text-dim:  #8a837a;
+    --accent:    #b08e5a;
   }
 
   *{box-sizing:border-box;margin:0;padding:0}
@@ -25,7 +31,6 @@
     font-family:Georgia,'Times New Roman',serif;
     font-size:17px;
     line-height:1.65;
-    /* тонкая зернистость фона — атмосфера бумаги */
     background-image:radial-gradient(circle at 20% 10%, #1a1613 0%, transparent 45%),
                      radial-gradient(circle at 85% 60%, #14110f 0%, transparent 50%);
     background-attachment:fixed;
@@ -82,33 +87,42 @@
   .zine-quote small{display:block;font-style:normal;font-family:'Courier New',monospace;
     font-size:.7rem;letter-spacing:.15em;color:var(--text-dim);margin-top:12px}
 
-  /* ====== ССЫЛКИ ====== */
+  /* ====== КНОПКИ: единый ховер ====== */
   .links{display:flex;flex-wrap:wrap;gap:12px}
   .btn{
     font-family:'Courier New',monospace;font-size:.78rem;letter-spacing:.12em;
-    text-transform:uppercase;border:1px solid var(--line);padding:14px 26px;color:var(--text);
+    text-transform:uppercase;border:1px solid var(--line);padding:14px 26px;
+    color:var(--text);transition:background .2s, color .2s, border-color .2s;
   }
-  .btn:hover{border-color:var(--accent);color:var(--accent)}
+  .btn:hover,
+  .btn:focus-visible{
+    background:var(--accent);
+    border-color:var(--accent);
+    color:var(--bg);
+    outline:none;
+  }
 
   /* ====== ПОДВАЛ ====== */
   footer{padding:56px 0 70px;text-align:center;color:var(--text-dim);font-size:.85rem}
   footer a{color:var(--text-dim);border-bottom:1px solid var(--line)}
   footer a:hover{color:var(--accent);border-color:var(--accent)}
+  footer p+p{margin-top:10px}
 
   /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
   @media (max-width:640px){
     body{font-size:16px}
     header{padding:64px 0 48px}
     section{padding:48px 0}
-    .grid{grid-template-columns:1fr}   /* карточки в одну колонку */
+    .grid{grid-template-columns:1fr}
     .zine{grid-template-columns:1fr;gap:26px}
     .card{padding:26px 22px}
+    .btn{flex:1 1 100%;text-align:center}
   }
 </style>
 </head>
 <body>
 
-<!-- ===== ШАПКА: название и описание ===== -->
+<!-- ===== ШАПКА ===== -->
 <header>
   <div class="wrap">
     <p class="kicker">сообщество · блог · zine</p>
@@ -207,13 +221,11 @@
     <div class="wrap">
       <h2>Где мы</h2>
       <div class="links">
-        <!-- ЗАМЕНИ href на свои ссылки, если появятся -->
+        <a class="btn" href="https://t.me/atmospheric_zine" target="_blank" rel="noopener">Telegram</a>
         <a class="btn" href="https://vk.ru/atmospheric_zine" target="_blank" rel="noopener">ВКонтакте</a>
-        <a class="btn" href="https://vk.ru/atmospheric_zine" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn" href="https://vk.ru/atmospheric_zine" target="_blank" rel="noopener">Bandcamp</a>
       </div>
       <p style="margin-top:26px;color:var(--text-dim);font-size:.9rem">
-        Ссылки на Telegram и Bandcamp добавь, когда будут готовы — сейчас все ведут в сообщество.
+        Все анонсы, заметки и новости о выпусках журнала — в Telegram-канале.
       </p>
     </div>
   </section>
@@ -224,7 +236,9 @@
 <footer>
   <div class="wrap">
     <p>Atmospheric — сообщество о тяжёлой и тёмной музыке</p>
-    <p style="margin-top:10px">
+    <p>
+      <a href="https://t.me/atmospheric_zine" target="_blank" rel="noopener">t.me/atmospheric_zine</a>
+      &nbsp;·&nbsp;
       <a href="https://vk.ru/atmospheric_zine" target="_blank" rel="noopener">vk.ru/atmospheric_zine</a>
     </p>
   </div>
