@@ -1,0 +1,24 @@
+/* ====== ЖАНРОВЫЕ ССЫЛКИ ====== */
+a.genre{
+  display:inline-block;
+  transition:border-color .2s, color .2s, background .2s;
+}
+a.genre:hover,
+a.genre:focus-visible{
+  border-color:var(--accent);
+  color:var(--accent);
+  background:rgba(176,142,90,.08);
+  outline:none;
+}
+
+/* ====== ОБЩАЯ ШАПКА СТРАНИЦ ====== */
+.topbar{
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+  font-family:'Courier New',monospace;
+  font-size:.75rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+}
+.topbar a{color:var(--text-dim)}
+.topbar a:hover{color:var(--accent)}
