@@ -7,12 +7,13 @@
 <meta name="description" content="Atmospheric — сообщество и блог о блэк-метале, сладже, пост- и дум-метале, дарк-фолке и дарк-эмбиенте. Обзоры релизов, заметки с концертов, подборки и печатный журнал.">
 <meta name="theme-color" content="#0d0c0b">
 
-<!-- ===== ИКОНКА: файл favicon.png рядом с index.html ===== -->
-<link rel="icon" type="image/png" sizes="512x512" href="favicon.png">
-<link rel="apple-touch-icon" href="favicon.png">
+<!-- ===== ИКОНКА ВКЛАДКИ: упрощённая версия ===== -->
+<link rel="icon" type="image/png" sizes="512x512" href="favicon-simple.png?v=3">
+<link rel="shortcut icon" type="image/png" href="favicon-simple.png?v=3">
+<link rel="apple-touch-icon" href="favicon-simple.png?v=3">
 
 <style>
-  /* ====== ЦВЕТА: меняй только здесь ====== */
+  /* ====== ЦВЕТА ====== */
   :root{
     --bg:        #0d0c0b;
     --bg-soft:   #161412;
@@ -42,7 +43,19 @@
   .wrap{max-width:960px;margin:0 auto;padding:0 24px}
 
   /* ====== ШАПКА ====== */
-  header{padding:90px 0 70px;text-align:center;border-bottom:1px solid var(--line)}
+  header{padding:80px 0 70px;text-align:center;border-bottom:1px solid var(--line)}
+
+  /* логотип в шапке: белый рисунок на белом фоне исходника
+     переводим в режим «светлее» и приглушаем — остаётся только графика */
+  .logo{
+    display:block;
+    width:100%;max-width:300px;height:auto;
+    margin:0 auto 34px;
+    mix-blend-mode:screen;
+    opacity:.82;
+    filter:invert(1) brightness(1.05);
+  }
+
   .kicker{
     font-family:'Courier New',monospace;
     font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
@@ -111,8 +124,9 @@
   /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
   @media (max-width:640px){
     body{font-size:16px}
-    header{padding:64px 0 48px}
+    header{padding:56px 0 48px}
     section{padding:48px 0}
+    .logo{max-width:210px;margin-bottom:26px}
     .grid{grid-template-columns:1fr}
     .zine{grid-template-columns:1fr;gap:26px}
     .card{padding:26px 22px}
@@ -125,6 +139,7 @@
 <!-- ===== ШАПКА ===== -->
 <header>
   <div class="wrap">
+    <img class="logo" src="logo.png" alt="Atmospheric — логотип">
     <p class="kicker">сообщество · блог · zine</p>
     <h1>Atmospheric</h1>
     <p class="lead">
