@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atmospheric — сообщество и блог о тяжёлой и тёмной музыке</title>
+<meta name="description" content="Atmospheric — сообщество и блог о блэк-метале, сладже, пост- и дум-метале, дарк-фолке и дарк-эмбиенте. Обзоры релизов, заметки с концертов, подборки и печатный журнал.">
+<style>
+  /* ====== ЦВЕТА: меняй только здесь ====== */
+  :root{
+    --bg:        #0d0c0b;   /* фон */
+    --bg-soft:   #161412;   /* фон карточек */
+    --line:      #2b2724;   /* линии и рамки */
+    --text:      #ddd8d0;   /* основной текст */
+    --text-dim:  #8a837a;   /* второстепенный текст */
+    --accent:    #b08e5a;   /* латунь — акцент */
+  }
+
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:Georgia,'Times New Roman',serif;
+    font-size:17px;
+    line-height:1.65;
+    /* тонкая зернистость фона — атмосфера бумаги */
+    background-image:radial-gradient(circle at 20% 10%, #1a1613 0%, transparent 45%),
+                     radial-gradient(circle at 85% 60%, #14110f 0%, transparent 50%);
+    background-attachment:fixed;
+  }
+
+  a{color:var(--text);text-decoration:none;transition:.2s}
+  a:hover{color:var(--accent)}
+
+  .wrap{max-width:960px;margin:0 auto;padding:0 24px}
+
+  /* ====== ШАПКА ====== */
+  header{padding:90px 0 70px;text-align:center;border-bottom:1px solid var(--line)}
+  .kicker{
+    font-family:'Courier New',monospace;
+    font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
+    color:var(--accent);margin-bottom:26px;
+  }
+  h1{
+    font-size:clamp(2.6rem,9vw,4.6rem);
+    font-weight:400;letter-spacing:.02em;line-height:1;
+    margin-bottom:22px;
+  }
+  .lead{max-width:600px;margin:0 auto;color:var(--text-dim);font-size:1.02rem}
+
+  /* ====== СЕКЦИИ ====== */
+  section{padding:64px 0;border-bottom:1px solid var(--line)}
+  h2{
+    font-family:'Courier New',monospace;
+    font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;
+    color:var(--accent);font-weight:400;margin-bottom:34px;
+  }
+  h2::before{content:"— "}
+
+  /* ====== ЖАНРЫ ====== */
+  .genres{display:flex;flex-wrap:wrap;gap:10px}
+  .genre{
+    font-family:'Courier New',monospace;font-size:.75rem;
+    border:1px solid var(--line);padding:6px 14px;color:var(--text-dim);
+  }
+
+  /* ====== РУБРИКИ ====== */
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}
+  .card{background:var(--bg);padding:32px 28px}
+  .card h3{font-size:1.22rem;font-weight:400;margin-bottom:12px}
+  .card p{color:var(--text-dim);font-size:.94rem}
+
+  /* ====== ЖУРНАЛ ====== */
+  .zine{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+  .zine-note{color:var(--text-dim)}
+  .zine-quote{
+    font-style:italic;color:var(--text);border-left:2px solid var(--accent);
+    padding-left:20px;
+  }
+  .zine-quote small{display:block;font-style:normal;font-family:'Courier New',monospace;
+    font-size:.7rem;letter-spacing:.15em;color:var(--text-dim);margin-top:12px}
+
+  /* ====== ССЫЛКИ ====== */
+  .links{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{
+    font-family:'Courier New',monospace;font-size:.78rem;letter-spacing:.12em;
+    text-transform:uppercase;border:1px solid var(--line);padding:14px 26px;color:var(--text);
+  }
+  .btn:hover{border-color:var(--accent);color:var(--accent)}
+
+  /* ====== ПОДВАЛ ====== */
+  footer{padding:56px 0 70px;text-align:center;color:var(--text-dim);font-size:.85rem}
+  footer a{color:var(--text-dim);border-bottom:1px solid var(--line)}
+  footer a:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
+  @media (max-width:640px){
+    body{font-size:16px}
+    header{padding:64px 0 48px}
+    section{padding:48px 0}
+    .grid{grid-template-columns:1fr}   /* карточки в одну колонку */
+    .zine{grid-template-columns:1fr;gap:26px}
+    .card{padding:26px 22px}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== ШАПКА: название и описание ===== -->
+<header>
+  <div class="wrap">
+    <p class="kicker">сообщество · блог · zine</p>
+    <h1>Atmospheric</h1>
+    <p class="lead">
+      Сообщество и блог о тяжёлой и тёмной музыке: блэк-метал, сладж,
+      пост- и дум-метал, дарк-фолк, дарк-эмбиент, данжен-синт и близкие жанры.
+    </p>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== О НАС ===== -->
+  <section>
+    <div class="wrap">
+      <h2>О нас</h2>
+      <p style="max-width:680px">
+        Мы публикуем обзоры релизов, заметки с концертов, тематические подборки
+        и материалы о жанрах, до которых добираемся сами — со всеми сомнениями
+        и без готовых списков. Отдельное направление — наш печатный журнал
+        с неописуемым типографским запахом.
+      </p>
+
+      <div class="genres" style="margin-top:32px">
+        <span class="genre">блэк-метал</span>
+        <span class="genre">сладж</span>
+        <span class="genre">пост-метал</span>
+        <span class="genre">дум-метал</span>
+        <span class="genre">дарк-фолк</span>
+        <span class="genre">дарк-эмбиент</span>
+        <span class="genre">данжен-синт</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== РУБРИКИ ===== -->
+  <section>
+    <div class="wrap">
+      <h2>Что публикуем</h2>
+      <div class="grid">
+
+        <div class="card">
+          <h3>Обзоры релизов</h3>
+          <p>Новые записи и то, что прошло мимо. Слушаем сами, пишем о том,
+             что зацепило — и о том, что нет.</p>
+        </div>
+
+        <div class="card">
+          <h3>Заметки с концертов</h3>
+          <p>То, что остаётся после живого звука: зал, свет, воздух
+             и пара нетипичных деталей.</p>
+        </div>
+
+        <div class="card">
+          <h3>Подборки</h3>
+          <p>Тематические списки — сезонные и не только. Собраны по смыслу,
+             а не по количеству прослушиваний.</p>
+        </div>
+
+        <div class="card">
+          <h3>Материалы о жанрах</h3>
+          <p>Разбираем направления, в которых разбираться ещё не успели.
+             Отделяем проверенное от предположений.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ЖУРНАЛ ===== -->
+  <section>
+    <div class="wrap">
+      <h2>Печатный журнал</h2>
+      <div class="zine">
+        <div class="zine-note">
+          <p>
+            Zine — это не приложение к сайту, это отдельная история.
+            Бумага, типографская краска, переплёт и то самое ощущение,
+            когда журнал только что из коробки.
+          </p>
+          <p style="margin-top:18px">
+            Анонсы выпусков и способов получить экземпляр — в сообществе.
+          </p>
+        </div>
+        <div class="zine-quote">
+          «Неописуемый типографский запах»
+          <small>о нашем журнале</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ССЫЛКИ ===== -->
+  <section>
+    <div class="wrap">
+      <h2>Где мы</h2>
+      <div class="links">
+        <!-- ЗАМЕНИ href на свои ссылки, если появятся -->
+        <a class="btn" href="https://vk.ru/atmospheric_zine" target="_blank" rel="noopener">ВКонтакте</a>
+        <a class="btn" href="https://vk.ru/atmospheric_zine" target="_blank" rel="noopener">Telegram</a>
+        <a class="btn" href="https://vk.ru/atmospheric_zine" target="_blank" rel="noopener">Bandcamp</a>
+      </div>
+      <p style="margin-top:26px;color:var(--text-dim);font-size:.9rem">
+        Ссылки на Telegram и Bandcamp добавь, когда будут готовы — сейчас все ведут в сообщество.
+      </p>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== ПОДВАЛ ===== -->
+<footer>
+  <div class="wrap">
+    <p>Atmospheric — сообщество о тяжёлой и тёмной музыке</p>
+    <p style="margin-top:10px">
+      <a href="https://vk.ru/atmospheric_zine" target="_blank" rel="noopener">vk.ru/atmospheric_zine</a>
+    </p>
+  </div>
+</footer>
+
+</body>
+</html>
