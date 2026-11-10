@@ -158,7 +158,7 @@ footer p+p{margin-top:10px}
 .page-head p{color:var(--text-dim);max-width:640px}
 
 /* ============================================================
-   СПИСОК ОБЗОРОВ — колонки, не зависящие от высоты карточки
+   СПИСОК ОБЗОРОВ — колонки
    ============================================================ */
 .releases{
   columns:3;
@@ -238,27 +238,31 @@ footer p+p{margin-top:10px}
 }
 
 /* ====== СТРАНИЦА АЛЬБОМА ====== */
-.album{padding:52px 0 80px}
+.album{padding:48px 0 80px}
+
 .album-title{
   font-size:clamp(1.5rem,3.8vw,2.3rem);
   font-weight:400;
   line-height:1.25;
-  margin:0 0 16px 0;
+  margin:0 0 14px 0;
 }
 .album-title span{color:var(--accent)}
+
 .album-date{
   font-family:'Courier New',monospace;
   font-size:.74rem;
   letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--text-dim);
-  margin:0 0 36px 0;
+  margin:0 0 34px 0;
+  padding-bottom:20px;
+  border-bottom:1px solid var(--line);
 }
 
 .album-layout{
   display:grid;
   grid-template-columns:1fr 1fr;
-  gap:32px;
+  gap:36px;
   align-items:start;
   margin-bottom:52px;
 }
@@ -270,39 +274,36 @@ footer p+p{margin-top:10px}
   border:1px solid var(--line);
 }
 
-.album-info{list-style:none;margin:0;padding:0}
+.album-info{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .album-info li{
   display:grid;
-  grid-template-columns:140px 1fr;
+  grid-template-columns:150px 1fr;
   gap:16px;
-  padding:12px 0;
+  padding:14px 0;
   border-bottom:1px solid var(--line);
-  font-size:.92rem;
+  font-size:.95rem;
 }
-.album-info li:first-child{border-top:1px solid var(--line)}
 .album-info dt{
   font-family:'Courier New',monospace;
   font-size:.72rem;
   letter-spacing:.1em;
   text-transform:uppercase;
   color:var(--text-dim);
-  padding-top:3px;
+  padding-top:4px;
 }
 .album-info dd{color:var(--accent);margin:0}
 
-.album-body{max-width:680px;margin:0 auto}
-.album-body p{margin-bottom:24px}
+.album-body{max-width:700px;margin:0 auto;font-size:1.02rem}
+.album-body p{margin-bottom:26px}
 .album-body blockquote{
   border-left:2px solid var(--accent);
   padding-left:20px;margin:30px 0;
   font-style:italic;
 }
-.album-body ul{margin:0 0 24px 22px}
-.album-body li{margin-bottom:8px}
 
 .back{
   display:inline-block;
-  margin-top:48px;
+  margin-top:52px;
   font-family:'Courier New',monospace;
   font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
   color:var(--text-dim);
