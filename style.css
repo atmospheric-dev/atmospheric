@@ -157,13 +157,37 @@ footer p+p{margin-top:10px}
 }
 .page-head p{color:var(--text-dim);max-width:640px}
 
+/* ====== ПОДБОРКА (жанр / группа / страна) ====== */
+.collection-head{padding:56px 0 0}
+.collection-head h1{
+  font-size:clamp(1.9rem,5vw,3rem);
+  font-weight:400;line-height:1.15;margin:0 0 12px 0;
+}
+.collection-head h1 + .collection-alt{margin-top:0}
+.collection-alt{
+  font-family:'Courier New',monospace;
+  font-size:.74rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent);
+  margin:0 0 20px 0;
+}
+.collection-note{
+  color:var(--text-dim);
+  font-size:.94rem;
+  max-width:640px;
+  margin:0 0 8px 0;
+  padding-bottom:32px;
+  border-bottom:1px solid var(--line);
+}
+
 /* ============================================================
    СПИСОК ОБЗОРОВ — колонки
    ============================================================ */
 .releases{
   columns:3;
   column-gap:28px;
-  padding:48px 0 0;
+  padding:40px 0 0;
 }
 
 .release{
@@ -329,7 +353,8 @@ footer p+p{margin-top:10px}
   .card{padding:26px 22px}
   .btn{flex:1 1 100%;text-align:center}
   .page-head{padding:44px 0 4px}
-  .releases{columns:1;padding:38px 0 0}
+  .collection-head{padding:44px 0 0}
+  .releases{columns:1;padding:32px 0 0}
   .release{margin-bottom:44px}
   .release-cover{height:auto;aspect-ratio:1 / 1}
   .release h3{font-size:1rem}
