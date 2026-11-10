@@ -2,7 +2,6 @@
    Atmospheric — общие стили для всех страниц сайта
    ============================================================ */
 
-/* ====== ЦВЕТА: меняй только здесь ====== */
 :root{
   --bg:        #0d0c0b;
   --bg-soft:   #161412;
@@ -162,69 +161,65 @@ footer p+p{margin-top:10px}
 .releases{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  align-items:start;
-  gap:48px 28px;
+  gap:52px 28px;
   padding:48px 0 72px;
 }
 
 .release{
-  display:flex;
-  flex-direction:column;
-  height:100%;
+  display:block;
   color:var(--text);
 }
 
+/* обложка: строго квадрат, любая исходная пропорция обрезается */
 .release-cover{
   display:block;
   width:100%;
-  height:auto;
   aspect-ratio:1 / 1;
   object-fit:cover;
+  object-position:center;
   background:var(--bg-soft);
-  margin-bottom:18px;
+  margin:0 0 18px 0;
   border:1px solid var(--line);
   transition:border-color .25s, filter .25s;
 }
 .release:hover .release-cover{
   border-color:var(--accent);
-  filter:brightness(.85);
+  filter:brightness(.82);
 }
 
 .release h3{
+  display:block;
   font-size:1.02rem;
   font-weight:400;
   line-height:1.35;
   color:var(--accent);
-  margin-bottom:12px;
+  margin:0 0 12px 0;
   transition:color .2s;
 }
 .release:hover h3{color:var(--text)}
 
-/* ровно 4 строки, дальше многоточие */
 .release-excerpt{
-  color:var(--text-dim);
-  font-size:.93rem;
-  line-height:1.55;
-  margin-bottom:16px;
   display:-webkit-box;
   -webkit-line-clamp:4;
   -webkit-box-orient:vertical;
   overflow:hidden;
+  color:var(--text-dim);
+  font-size:.93rem;
+  line-height:1.55;
+  margin:0 0 16px 0;
 }
 
-/* теги всегда прижаты к низу карточки */
 .release-tags{
-  margin-top:auto;
-  padding-top:4px;
+  display:block;
   font-family:'Courier New',monospace;
   font-size:.72rem;
   letter-spacing:.05em;
   line-height:1.9;
   color:var(--text-dim);
+  margin:0;
 }
 .release-tags a{color:var(--text-dim)}
 .release-tags a:hover{color:var(--accent)}
-.release-tags span{opacity:.45}
 
 /* ====== ХЕШТЕГИ ====== */
 .tags{
@@ -258,8 +253,7 @@ footer p+p{margin-top:10px}
   font-size:clamp(1.5rem,3.8vw,2.3rem);
   font-weight:400;
   line-height:1.25;
-  letter-spacing:.01em;
-  margin-bottom:16px;
+  margin:0 0 16px 0;
 }
 .album-title span{color:var(--accent)}
 .album-date{
@@ -268,7 +262,7 @@ footer p+p{margin-top:10px}
   letter-spacing:.14em;
   text-transform:uppercase;
   color:var(--text-dim);
-  margin-bottom:36px;
+  margin:0 0 36px 0;
 }
 
 .album-layout{
@@ -281,13 +275,12 @@ footer p+p{margin-top:10px}
 .album-cover{
   display:block;
   width:100%;
-  height:auto;
   aspect-ratio:1 / 1;
   object-fit:cover;
   border:1px solid var(--line);
 }
 
-.album-info{list-style:none}
+.album-info{list-style:none;margin:0;padding:0}
 .album-info li{
   display:grid;
   grid-template-columns:140px 1fr;
@@ -305,7 +298,7 @@ footer p+p{margin-top:10px}
   color:var(--text-dim);
   padding-top:3px;
 }
-.album-info dd{color:var(--accent)}
+.album-info dd{color:var(--accent);margin:0}
 
 .album-body{max-width:680px;margin:0 auto}
 .album-body p{margin-bottom:24px}
@@ -330,7 +323,7 @@ footer p+p{margin-top:10px}
 
 /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
 @media (max-width:900px){
-  .releases{grid-template-columns:repeat(2,1fr);gap:40px 22px}
+  .releases{grid-template-columns:repeat(2,1fr);gap:44px 22px}
   .album-layout{grid-template-columns:1fr;gap:24px}
 }
 
@@ -344,7 +337,7 @@ footer p+p{margin-top:10px}
   .card{padding:26px 22px}
   .btn{flex:1 1 100%;text-align:center}
   .page-head{padding:44px 0 4px}
-  .releases{grid-template-columns:1fr;gap:40px;padding:38px 0 56px}
+  .releases{grid-template-columns:1fr;gap:44px;padding:38px 0 56px}
   .release h3{font-size:1rem}
   .album{padding:40px 0 60px}
   .album-info li{grid-template-columns:1fr;gap:2px;padding:10px 0}
