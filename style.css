@@ -75,7 +75,6 @@ h2::before{content:"— "}
   border:1px solid var(--line);padding:6px 14px;color:var(--text-dim);
 }
 
-/* плашки-ссылки подсвечиваются как кнопки */
 a.genre{
   display:inline-block;
   transition:border-color .2s, color .2s, background .2s;
@@ -94,7 +93,6 @@ a.genre:focus-visible{
 .card h3{font-size:1.22rem;font-weight:400;margin-bottom:12px}
 .card p{color:var(--text-dim);font-size:.94rem}
 
-/* кликабельный заголовок рубрики */
 .card h3 a{
   border-bottom:1px solid transparent;
   transition:color .2s, border-color .2s;
@@ -118,7 +116,7 @@ a.genre:focus-visible{
   font-size:.7rem;letter-spacing:.15em;color:var(--text-dim);margin-top:12px;
 }
 
-/* ====== КНОПКИ: единый ховер ====== */
+/* ====== КНОПКИ ====== */
 .links{display:flex;flex-wrap:wrap;gap:12px}
 
 .btn{
@@ -140,7 +138,7 @@ footer a{color:var(--text-dim);border-bottom:1px solid var(--line)}
 footer a:hover{color:var(--accent);border-color:var(--accent)}
 footer p+p{margin-top:10px}
 
-/* ====== ОБЩАЯ ШАПКА ВНУТРЕННИХ СТРАНИЦ ====== */
+/* ====== ШАПКА ВНУТРЕННИХ СТРАНИЦ ====== */
 .topbar{
   padding:22px 0;
   border-bottom:1px solid var(--line);
@@ -153,14 +151,165 @@ footer p+p{margin-top:10px}
 .topbar a:hover{color:var(--accent)}
 
 /* ====== ЗАГОЛОВОК ВНУТРЕННЕЙ СТРАНИЦЫ ====== */
-.page-head{padding:64px 0 48px;border-bottom:1px solid var(--line)}
+.page-head{padding:56px 0 8px}
 .page-head h1{
   font-size:clamp(1.9rem,5vw,3rem);
   font-weight:400;line-height:1.15;margin-bottom:16px;
 }
 .page-head p{color:var(--text-dim);max-width:640px}
 
+/* ====== СПИСОК ОБЗОРОВ ====== */
+.releases{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:44px 26px;
+  padding:48px 0 72px;
+}
+.release{display:block;color:var(--text)}
+.release-cover{
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  display:block;
+  margin-bottom:18px;
+  border:1px solid var(--line);
+  transition:border-color .25s, filter .25s;
+}
+.release:hover .release-cover{
+  border-color:var(--accent);
+  filter:brightness(.85);
+}
+.release h3{
+  font-size:1.05rem;
+  font-weight:400;
+  line-height:1.35;
+  color:var(--accent);
+  margin-bottom:14px;
+  transition:color .2s;
+}
+.release:hover h3{color:var(--text)}
+.release-excerpt{
+  color:var(--text-dim);
+  font-size:.94rem;
+  margin-bottom:16px;
+}
+.release-tags{
+  font-family:'Courier New',monospace;
+  font-size:.72rem;
+  letter-spacing:.05em;
+  line-height:1.9;
+  color:var(--text-dim);
+}
+.release-tags a{color:var(--text-dim)}
+.release-tags a:hover{color:var(--accent)}
+.release-tags span{opacity:.45}
+
+/* ====== ХЕШТЕГИ ====== */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:48px;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+.tags a{
+  font-family:'Courier New',monospace;
+  font-size:.74rem;
+  letter-spacing:.06em;
+  border:1px solid var(--line);
+  padding:6px 14px;
+  color:var(--text-dim);
+  transition:border-color .2s, color .2s, background .2s;
+}
+.tags a:hover,
+.tags a:focus-visible{
+  border-color:var(--accent);
+  color:var(--accent);
+  background:rgba(176,142,90,.08);
+  outline:none;
+}
+
+/* ====== СТРАНИЦА АЛЬБОМА ====== */
+.album{padding:52px 0 80px}
+.album-title{
+  font-size:clamp(1.6rem,4.4vw,2.6rem);
+  font-weight:400;
+  line-height:1.2;
+  letter-spacing:.01em;
+  margin-bottom:18px;
+}
+.album-title span{color:var(--accent)}
+.album-date{
+  font-family:'Courier New',monospace;
+  font-size:.74rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  margin-bottom:36px;
+}
+
+.album-layout{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:start;
+  margin-bottom:48px;
+}
+.album-cover{
+  width:100%;
+  aspect-ratio:1 / 1;
+  object-fit:cover;
+  display:block;
+  border:1px solid var(--line);
+}
+
+.album-info{border-top:1px solid var(--line)}
+.album-info div{
+  display:grid;
+  grid-template-columns:130px 1fr;
+  gap:16px;
+  padding:13px 0;
+  border-bottom:1px solid var(--line);
+  font-size:.92rem;
+}
+.album-info dt{
+  font-family:'Courier New',monospace;
+  font-size:.74rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  padding-top:3px;
+}
+.album-info dd{color:var(--accent)}
+
+.album-body{max-width:680px;margin:0 auto}
+.album-body p{margin-bottom:24px}
+.album-body blockquote{
+  border-left:2px solid var(--accent);
+  padding-left:20px;margin:30px 0;
+  font-style:italic;
+}
+.album-body ul{margin:0 0 24px 22px}
+.album-body li{margin-bottom:8px}
+
+.back{
+  display:inline-block;
+  margin-top:48px;
+  font-family:'Courier New',monospace;
+  font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-dim);
+  border-bottom:1px solid var(--line);
+  padding-bottom:4px;
+}
+.back:hover{border-color:var(--accent)}
+
 /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
+@media (max-width:900px){
+  .releases{grid-template-columns:repeat(2,1fr);gap:36px 22px}
+  .album-layout{grid-template-columns:1fr;gap:24px}
+}
+
 @media (max-width:640px){
   body{font-size:16px}
   header{padding:56px 0 48px}
@@ -170,5 +319,9 @@ footer p+p{margin-top:10px}
   .zine{grid-template-columns:1fr;gap:26px}
   .card{padding:26px 22px}
   .btn{flex:1 1 100%;text-align:center}
-  .page-head{padding:48px 0 36px}
+  .page-head{padding:44px 0 4px}
+  .releases{grid-template-columns:1fr;gap:38px;padding:38px 0 56px}
+  .release h3{font-size:1rem}
+  .album{padding:40px 0 60px}
+  .album-info div{grid-template-columns:1fr;gap:2px}
 }
