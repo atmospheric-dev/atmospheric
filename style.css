@@ -235,7 +235,31 @@ footer p+p{margin-top:10px}
   margin:0;
 }
 
-/* ====== ХЕШТЕГИ ====== */
+/* ====== ХЕШТЕГИ В КАРТОЧКЕ ====== */
+.release-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:14px;
+}
+.release-tags a{
+  font-family:'Courier New',monospace;
+  font-size:.68rem;
+  letter-spacing:.04em;
+  border:1px solid var(--line);
+  padding:3px 9px;
+  color:var(--text-dim);
+  transition:border-color .2s, color .2s, background .2s;
+}
+.release-tags a:hover,
+.release-tags a:focus-visible{
+  border-color:var(--accent);
+  color:var(--accent);
+  background:rgba(176,142,90,.08);
+  outline:none;
+}
+
+/* ====== ХЕШТЕГИ (фильтр и подвал страницы альбома) ====== */
 .tags{
   display:flex;
   flex-wrap:wrap;
@@ -254,7 +278,8 @@ footer p+p{margin-top:10px}
   transition:border-color .2s, color .2s, background .2s;
 }
 .tags a:hover,
-.tags a:focus-visible{
+.tags a:focus-visible,
+.tags a.is-active{
   border-color:var(--accent);
   color:var(--accent);
   background:rgba(176,142,90,.08);
