@@ -162,15 +162,25 @@ footer p+p{margin-top:10px}
 .releases{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:44px 26px;
+  align-items:start;
+  gap:48px 28px;
   padding:48px 0 72px;
 }
-.release{display:block;color:var(--text)}
+
+.release{
+  display:flex;
+  flex-direction:column;
+  height:100%;
+  color:var(--text);
+}
+
 .release-cover{
+  display:block;
   width:100%;
+  height:auto;
   aspect-ratio:1 / 1;
   object-fit:cover;
-  display:block;
+  background:var(--bg-soft);
   margin-bottom:18px;
   border:1px solid var(--line);
   transition:border-color .25s, filter .25s;
@@ -179,21 +189,33 @@ footer p+p{margin-top:10px}
   border-color:var(--accent);
   filter:brightness(.85);
 }
+
 .release h3{
-  font-size:1.05rem;
+  font-size:1.02rem;
   font-weight:400;
   line-height:1.35;
   color:var(--accent);
-  margin-bottom:14px;
+  margin-bottom:12px;
   transition:color .2s;
 }
 .release:hover h3{color:var(--text)}
+
+/* ровно 4 строки, дальше многоточие */
 .release-excerpt{
   color:var(--text-dim);
-  font-size:.94rem;
+  font-size:.93rem;
+  line-height:1.55;
   margin-bottom:16px;
+  display:-webkit-box;
+  -webkit-line-clamp:4;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
 }
+
+/* теги всегда прижаты к низу карточки */
 .release-tags{
+  margin-top:auto;
+  padding-top:4px;
   font-family:'Courier New',monospace;
   font-size:.72rem;
   letter-spacing:.05em;
@@ -233,11 +255,11 @@ footer p+p{margin-top:10px}
 /* ====== СТРАНИЦА АЛЬБОМА ====== */
 .album{padding:52px 0 80px}
 .album-title{
-  font-size:clamp(1.6rem,4.4vw,2.6rem);
+  font-size:clamp(1.5rem,3.8vw,2.3rem);
   font-weight:400;
-  line-height:1.2;
+  line-height:1.25;
   letter-spacing:.01em;
-  margin-bottom:18px;
+  margin-bottom:16px;
 }
 .album-title span{color:var(--accent)}
 .album-date{
@@ -254,28 +276,30 @@ footer p+p{margin-top:10px}
   grid-template-columns:1fr 1fr;
   gap:32px;
   align-items:start;
-  margin-bottom:48px;
+  margin-bottom:52px;
 }
 .album-cover{
+  display:block;
   width:100%;
+  height:auto;
   aspect-ratio:1 / 1;
   object-fit:cover;
-  display:block;
   border:1px solid var(--line);
 }
 
-.album-info{border-top:1px solid var(--line)}
-.album-info div{
+.album-info{list-style:none}
+.album-info li{
   display:grid;
-  grid-template-columns:130px 1fr;
+  grid-template-columns:140px 1fr;
   gap:16px;
-  padding:13px 0;
+  padding:12px 0;
   border-bottom:1px solid var(--line);
   font-size:.92rem;
 }
+.album-info li:first-child{border-top:1px solid var(--line)}
 .album-info dt{
   font-family:'Courier New',monospace;
-  font-size:.74rem;
+  font-size:.72rem;
   letter-spacing:.1em;
   text-transform:uppercase;
   color:var(--text-dim);
@@ -306,7 +330,7 @@ footer p+p{margin-top:10px}
 
 /* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
 @media (max-width:900px){
-  .releases{grid-template-columns:repeat(2,1fr);gap:36px 22px}
+  .releases{grid-template-columns:repeat(2,1fr);gap:40px 22px}
   .album-layout{grid-template-columns:1fr;gap:24px}
 }
 
@@ -320,8 +344,8 @@ footer p+p{margin-top:10px}
   .card{padding:26px 22px}
   .btn{flex:1 1 100%;text-align:center}
   .page-head{padding:44px 0 4px}
-  .releases{grid-template-columns:1fr;gap:38px;padding:38px 0 56px}
+  .releases{grid-template-columns:1fr;gap:40px;padding:38px 0 56px}
   .release h3{font-size:1rem}
   .album{padding:40px 0 60px}
-  .album-info div{grid-template-columns:1fr;gap:2px}
+  .album-info li{grid-template-columns:1fr;gap:2px;padding:10px 0}
 }
