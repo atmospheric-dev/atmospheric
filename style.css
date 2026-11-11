@@ -520,3 +520,31 @@ footer p+p{margin-top:10px}
   color:var(--text-dim);
   margin:0 0 16px 0;
 }
+/* ====== ССЫЛКИ НА СООБЩЕСТВА ГРУПП ====== */
+.band-links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+  margin:0 0 36px 0;
+  padding-top:28px;
+  border-top:1px solid var(--line);
+}
+.band-links a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:44px;
+  height:44px;
+  border:1px solid var(--line);
+  color:var(--text-dim);
+  transition:color .2s, border-color .2s;
+}
+.band-links a:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+}
+.band-links svg{
+  width:20px;
+  height:20px;
+  fill:currentColor;
+}
