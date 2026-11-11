@@ -400,7 +400,7 @@ footer p+p{margin-top:10px}
   font-weight:400;
   line-height:1.35;
   color:var(--accent);
-  margin:0 0 12px 0;
+  margin:0 0 14px 0;
   transition:color .2s;
 }
 .pick:hover .pick-title{color:var(--text)}
@@ -417,16 +417,6 @@ footer p+p{margin-top:10px}
 .pick:hover .pick-cover{
   border-color:var(--accent);
   filter:brightness(.85);
-}
-
-.pick-meta{
-  display:block;
-  margin-top:12px;
-  font-family:'Courier New',monospace;
-  font-size:.68rem;
-  letter-spacing:.08em;
-  line-height:1.6;
-  color:var(--text-dim);
 }
 
 @media (max-width:900px){
