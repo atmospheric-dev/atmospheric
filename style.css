@@ -726,3 +726,49 @@ footer a:hover{color:var(--accent);opacity:1;}
     font-size:2rem;
   }
 }
+/* ====== ШАПКА: ЛОГОТИП + СОЦСЕТИ ====== */
+.head-top{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap:24px;
+  margin-bottom:22px;
+}
+
+.head-top .logo{
+  margin-bottom:0;
+}
+
+.head-socials{
+  display:flex;
+  gap:10px;
+}
+
+.head-socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:40px;
+  height:40px;
+  border:1px solid var(--line);
+  color:var(--text-dim);
+  transition:color .2s, border-color .2s;
+}
+.head-socials a:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+  opacity:1;
+}
+
+.head-socials svg{
+  width:18px;
+  height:18px;
+  fill:currentColor;
+}
+
+@media (max-width:600px){
+  .head-top{
+    flex-direction:column;
+    gap:16px;
+  }
+}
