@@ -229,23 +229,6 @@ h3{
 
 .concert-card:hover .concert-title{color:var(--accent);}
 
-.concert-more{
-  display:inline-block;
-  margin-top:16px;
-  font-family:'Courier New',monospace;
-  font-size:.7rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--text-dim);
-  border-bottom:1px solid var(--line);
-  padding-bottom:3px;
-  transition:color .2s, border-color .2s;
-}
-.concert-more:hover{
-  color:var(--accent);
-  border-color:var(--accent);
-  opacity:1;
-}
 /* ====== ЖАНРОВЫЕ ХЕШТЕГИ ====== */
 .genres{
   display:flex;
