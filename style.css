@@ -546,3 +546,121 @@ footer p+p{margin-top:10px}
   height:19px;
   fill:currentColor;
 }
+/* ====== ДВУХКОЛОНОЧНАЯ ГЛАВНАЯ ====== */
+.main-grid{
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:48px;
+  align-items:start;
+}
+@media (max-width:900px){
+  .main-grid{
+    grid-template-columns:1fr;
+    gap:40px;
+  }
+}
+
+/* ====== БЛОК КОНЦЕРТОВ ====== */
+.concert-block{
+  position:sticky;
+  top:36px;
+}
+.concert-block .section-title{
+  margin:0 0 20px 0;
+}
+
+.concerts-list{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.concert-card{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  min-height:96px;
+  padding:18px 20px;
+  border:1px solid var(--line);
+  background:var(--bg-soft);
+  transition:border-color .25s;
+  text-decoration:none;
+}
+
+.concert-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:var(--poster);
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transform:scale(1.06);
+  transition:opacity .35s ease, transform .6s ease;
+  z-index:0;
+}
+
+.concert-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg, rgba(13,12,11,.95) 0%, rgba(13,12,11,.8) 55%, rgba(13,12,11,.5) 100%);
+  opacity:0;
+  transition:opacity .35s ease;
+  z-index:1;
+}
+
+.concert-card:hover{
+  border-color:var(--accent);
+}
+.concert-card:hover::before{
+  opacity:.9;
+  transform:scale(1);
+}
+.concert-card:hover::after{
+  opacity:1;
+}
+
+.concert-inner{
+  position:relative;
+  z-index:2;
+}
+
+.concert-title{
+  margin:0 0 6px 0;
+  font-size:.95rem;
+  line-height:1.35;
+  color:var(--text);
+  transition:color .25s;
+}
+.concert-date{
+  margin:0;
+  font-family:'Courier New',monospace;
+  font-size:.72rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+
+.concert-card:hover .concert-title{
+  color:var(--accent);
+}
+
+/* ссылка «все концерты» */
+.concert-more{
+  display:inline-block;
+  margin-top:18px;
+  font-family:'Courier New',monospace;
+  font-size:.72rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  text-decoration:none;
+  border-bottom:1px solid var(--line);
+  padding-bottom:3px;
+  transition:color .2s, border-color .2s;
+}
+.concert-more:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+}
