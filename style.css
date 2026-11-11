@@ -502,10 +502,21 @@ footer p+p{margin-top:10px}
 }
 /* ====== BANDCAMP-ПЛЕЕР ====== */
 .album-player{
-  margin:0 0 40px 0;
+  margin:40px 0 0 0;
+  padding-top:32px;
+  border-top:1px solid var(--line);
 }
 .album-player iframe{
   display:block;
   width:100%;
   border:0;
+}
+
+.album-player-label{
+  font-family:'Courier New',monospace;
+  font-size:.7rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  margin:0 0 16px 0;
 }
