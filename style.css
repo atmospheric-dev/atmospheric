@@ -1,526 +1,469 @@
-/* ============================================================
-   Atmospheric — общие стили для всех страниц сайта
-   ============================================================ */
+/* ========================================================
+   ATMOSPHERIC — style.css
+   ======================================================== */
 
+/* ====== ПЕРЕМЕННЫЕ ====== */
 :root{
-  --bg:        #0d0c0b;
-  --bg-soft:   #161412;
-  --line:      #2b2724;
-  --text:      #ddd8d0;
-  --text-dim:  #8a837a;
-  --accent:    #b08e5a;
+  --bg:#0d0c0b;
+  --bg-soft:#141211;
+  --bg-card:#181615;
+  --line:#2a2624;
+  --text:#d9d4cc;
+  --text-dim:#8a8178;
+  --accent:#b08e5a;
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
+/* ====== БАЗА ====== */
+*,*::before,*::after{box-sizing:border-box;}
+
+html{
+  scroll-behavior:smooth;
+}
 
 body{
+  margin:0;
   background:var(--bg);
   color:var(--text);
   font-family:Georgia,'Times New Roman',serif;
   font-size:17px;
   line-height:1.65;
-  background-image:radial-gradient(circle at 20% 10%, #1a1613 0%, transparent 45%),
-                   radial-gradient(circle at 85% 60%, #14110f 0%, transparent 50%);
-  background-attachment:fixed;
+  -webkit-font-smoothing:antialiased;
 }
 
-a{color:var(--text);text-decoration:none;transition:.2s}
-a:hover{color:var(--accent)}
+img{max-width:100%;height:auto;display:block;}
 
-.wrap{max-width:960px;margin:0 auto;padding:0 24px}
+a{
+  color:var(--accent);
+  text-decoration:none;
+  transition:opacity .2s;
+}
+a:hover{opacity:.75;}
 
-/* ====== ШАПКА ГЛАВНОЙ ====== */
-header{padding:80px 0 70px;text-align:center;border-bottom:1px solid var(--line)}
+p{margin:0 0 18px 0;}
+p:last-child{margin-bottom:0;}
+
+/* ====== КОНТЕЙНЕР ====== */
+.wrap{
+  max-width:1180px;
+  margin:0 auto;
+  padding:0 28px;
+}
+
+/* ====== ШАПКА ====== */
+header{
+  padding:64px 0 48px;
+  border-bottom:1px solid var(--line);
+}
 
 .logo{
-  display:block;
-  width:100%;max-width:300px;height:auto;
-  margin:0 auto 34px;
-  mix-blend-mode:screen;
-  opacity:.82;
-  filter:invert(1) brightness(1.05);
+  width:96px;
+  height:auto;
+  margin-bottom:22px;
 }
 
 .kicker{
   font-family:'Courier New',monospace;
-  font-size:.72rem;letter-spacing:.32em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:26px;
+  font-size:.7rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  margin:0 0 14px 0;
 }
 
 h1{
-  font-size:clamp(2.6rem,9vw,4.6rem);
-  font-weight:400;letter-spacing:.02em;line-height:1;
-  margin-bottom:22px;
+  font-size:3.4rem;
+  font-weight:normal;
+  letter-spacing:.02em;
+  margin:0 0 18px 0;
+  line-height:1.05;
 }
 
-.lead{max-width:600px;margin:0 auto;color:var(--text-dim);font-size:1.02rem}
-
-/* ====== СЕКЦИИ ====== */
-section{padding:64px 0;border-bottom:1px solid var(--line)}
-
-h2{
-  font-family:'Courier New',monospace;
-  font-size:.75rem;letter-spacing:.28em;text-transform:uppercase;
-  color:var(--accent);font-weight:400;margin-bottom:34px;
-}
-h2::before{content:"— "}
-
-/* ====== ЖАНРОВЫЕ ПЛАШКИ ====== */
-.genres{display:flex;flex-wrap:wrap;gap:10px}
-
-.genre{
-  font-family:'Courier New',monospace;font-size:.75rem;
-  border:1px solid var(--line);padding:6px 14px;color:var(--text-dim);
-}
-
-a.genre{
-  display:inline-block;
-  transition:border-color .2s, color .2s, background .2s;
-}
-a.genre:hover,
-a.genre:focus-visible{
-  border-color:var(--accent);
-  color:var(--accent);
-  background:rgba(176,142,90,.08);
-  outline:none;
-}
-
-/* ====== РУБРИКИ ====== */
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line)}
-.card{background:var(--bg);padding:32px 28px}
-.card h3{font-size:1.22rem;font-weight:400;margin-bottom:12px}
-.card p{color:var(--text-dim);font-size:.94rem}
-
-.card h3 a{
-  border-bottom:1px solid transparent;
-  transition:color .2s, border-color .2s;
-}
-.card h3 a:hover,
-.card h3 a:focus-visible{
-  color:var(--accent);
-  border-bottom-color:var(--accent);
-  outline:none;
-}
-
-/* ====== ЖУРНАЛ ====== */
-.zine{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
-.zine-note{color:var(--text-dim)}
-.zine-quote{
-  font-style:italic;color:var(--text);border-left:2px solid var(--accent);
-  padding-left:20px;
-}
-.zine-quote small{
-  display:block;font-style:normal;font-family:'Courier New',monospace;
-  font-size:.7rem;letter-spacing:.15em;color:var(--text-dim);margin-top:12px;
-}
-
-/* ====== КНОПКИ ====== */
-.links{display:flex;flex-wrap:wrap;gap:12px}
-
-.btn{
-  font-family:'Courier New',monospace;font-size:.78rem;letter-spacing:.12em;
-  text-transform:uppercase;border:1px solid var(--line);padding:14px 26px;
-  color:var(--text);transition:background .2s, color .2s, border-color .2s;
-}
-.btn:hover,
-.btn:focus-visible{
-  background:var(--accent);
-  border-color:var(--accent);
-  color:var(--bg);
-  outline:none;
-}
-
-/* ====== ПОДВАЛ ====== */
-footer{padding:56px 0 70px;text-align:center;color:var(--text-dim);font-size:.85rem}
-footer a{color:var(--text-dim);border-bottom:1px solid var(--line)}
-footer a:hover{color:var(--accent);border-color:var(--accent)}
-footer p+p{margin-top:10px}
-
-/* ====== ШАПКА ВНУТРЕННИХ СТРАНИЦ ====== */
-.topbar{
-  padding:22px 0;
-  border-bottom:1px solid var(--line);
-  font-family:'Courier New',monospace;
-  font-size:.75rem;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-.topbar a{color:var(--text-dim)}
-.topbar a:hover{color:var(--accent)}
-
-/* ====== ЗАГОЛОВОК ВНУТРЕННЕЙ СТРАНИЦЫ ====== */
-.page-head{padding:56px 0 8px}
-.page-head h1{
-  font-size:clamp(1.9rem,5vw,3rem);
-  font-weight:400;line-height:1.15;margin-bottom:16px;
-}
-.page-head p{color:var(--text-dim);max-width:640px}
-
-/* ====== ПОДБОРКА (жанр / группа / страна) ====== */
-.collection-head{padding:56px 0 0}
-.collection-head h1{
-  font-size:clamp(1.9rem,5vw,3rem);
-  font-weight:400;line-height:1.15;margin:0 0 12px 0;
-}
-.collection-head h1 + .collection-alt{margin-top:0}
-.collection-alt{
-  font-family:'Courier New',monospace;
-  font-size:.74rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--accent);
-  margin:0 0 20px 0;
-}
-.collection-note{
+.lead{
+  max-width:720px;
+  font-size:1.05rem;
   color:var(--text-dim);
-  font-size:.94rem;
-  max-width:640px;
-  margin:0 0 8px 0;
-  padding-bottom:32px;
-  border-bottom:1px solid var(--line);
-}
-
-/* ============================================================
-   СПИСОК ОБЗОРОВ — колонки
-   ============================================================ */
-.releases{
-  columns:3;
-  column-gap:28px;
-  padding:40px 0 0;
-}
-
-.release{
-  display:block;
-  break-inside:avoid;
-  page-break-inside:avoid;
-  margin-bottom:52px;
-  color:var(--text);
-}
-
-.release-cover{
-  display:block;
-  width:100%;
-  height:260px;
-  object-fit:cover;
-  object-position:center;
-  background:var(--bg-soft);
-  border:1px solid var(--line);
-  margin-bottom:16px;
-  transition:border-color .25s, filter .25s;
-}
-.release:hover .release-cover{
-  border-color:var(--accent);
-  filter:brightness(.82);
-}
-
-.release h3{
-  font-size:1.02rem;
-  font-weight:400;
-  line-height:1.35;
-  color:var(--accent);
-  margin-bottom:10px;
-  transition:color .2s;
-}
-.release:hover h3{color:var(--text)}
-
-.release-excerpt{
-  display:-webkit-box;
-  -webkit-line-clamp:4;
-  -webkit-box-orient:vertical;
-  overflow:hidden;
-  color:var(--text-dim);
-  font-size:.93rem;
-  line-height:1.55;
   margin:0;
 }
 
-/* ====== ХЕШТЕГИ В КАРТОЧКЕ ====== */
-.release-tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:6px;
-  margin-top:14px;
-}
-.release-tags a{
-  font-family:'Courier New',monospace;
-  font-size:.68rem;
-  letter-spacing:.04em;
-  border:1px solid var(--line);
-  padding:3px 9px;
-  color:var(--text-dim);
-  transition:border-color .2s, color .2s, background .2s;
-}
-.release-tags a:hover,
-.release-tags a:focus-visible{
-  border-color:var(--accent);
-  color:var(--accent);
-  background:rgba(176,142,90,.08);
-  outline:none;
-}
-
-/* ====== ХЕШТЕГИ (фильтр и подвал страницы альбома) ====== */
-.tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:10px;
-  margin-top:48px;
-  padding-top:28px;
-  border-top:1px solid var(--line);
-}
-.tags a{
-  font-family:'Courier New',monospace;
-  font-size:.74rem;
-  letter-spacing:.06em;
-  border:1px solid var(--line);
-  padding:6px 14px;
-  color:var(--text-dim);
-  transition:border-color .2s, color .2s, background .2s;
-}
-.tags a:hover,
-.tags a:focus-visible,
-.tags a.is-active{
-  border-color:var(--accent);
-  color:var(--accent);
-  background:rgba(176,142,90,.08);
-  outline:none;
-}
-
-/* ====== СТРАНИЦА АЛЬБОМА ====== */
-.album{padding:48px 0 80px}
-
-.album-title{
-  font-size:clamp(1.5rem,3.8vw,2.3rem);
-  font-weight:400;
-  line-height:1.25;
-  margin:0 0 14px 0;
-}
-.album-title span{color:var(--accent)}
-
-.album-date{
-  font-family:'Courier New',monospace;
-  font-size:.74rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--text-dim);
-  margin:0 0 34px 0;
-  padding-bottom:20px;
+/* ====== ЗАГОЛОВКИ СЕКЦИЙ ====== */
+main > section{
+  padding:64px 0;
   border-bottom:1px solid var(--line);
 }
+main > section:last-child{border-bottom:0;}
 
-.album-layout{
+h2{
+  font-size:1.6rem;
+  font-weight:normal;
+  letter-spacing:.02em;
+  margin:0 0 32px 0;
+}
+
+h3{
+  font-size:1.1rem;
+  font-weight:normal;
+  margin:0 0 12px 0;
+}
+
+/* ====== ВЕРХНИЙ БЛОК: ОБЗОРЫ + КОНЦЕРТЫ ====== */
+.top-layout{
   display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:36px;
+  grid-template-columns:1fr 320px;
+  gap:40px;
   align-items:start;
-  margin-bottom:52px;
-}
-.album-cover{
-  display:block;
-  width:100%;
-  aspect-ratio:1 / 1;
-  object-fit:cover;
-  border:1px solid var(--line);
 }
 
-.album-info{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
-.album-info li{
-  display:grid;
-  grid-template-columns:150px 1fr;
-  gap:16px;
-  padding:14px 0;
-  border-bottom:1px solid var(--line);
-  font-size:.95rem;
-}
-.album-info dt{
-  font-family:'Courier New',monospace;
-  font-size:.72rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--text-dim);
-  padding-top:4px;
-}
-.album-info dd{color:var(--accent);margin:0}
-
-.album-body{max-width:700px;margin:0 auto;font-size:1.02rem}
-.album-body p{margin-bottom:26px}
-.album-body blockquote{
-  border-left:2px solid var(--accent);
-  padding-left:20px;margin:30px 0;
-  font-style:italic;
-}
-
-.back{
-  display:inline-block;
-  margin-top:52px;
-  font-family:'Courier New',monospace;
-  font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;
-  color:var(--text-dim);
-  border-bottom:1px solid var(--line);
-  padding-bottom:4px;
-}
-.back:hover{border-color:var(--accent)}
-
-/* ====== МОБИЛЬНАЯ ВЕРСИЯ ====== */
-@media (max-width:900px){
-  .releases{columns:2;column-gap:22px}
-  .release-cover{height:auto;aspect-ratio:1 / 1}
-  .album-layout{grid-template-columns:1fr;gap:24px}
-}
-
-@media (max-width:640px){
-  body{font-size:16px}
-  header{padding:56px 0 48px}
-  section{padding:48px 0}
-  .logo{max-width:210px;margin-bottom:26px}
-  .grid{grid-template-columns:1fr}
-  .zine{grid-template-columns:1fr;gap:26px}
-  .card{padding:26px 22px}
-  .btn{flex:1 1 100%;text-align:center}
-  .page-head{padding:44px 0 4px}
-  .collection-head{padding:44px 0 0}
-  .releases{columns:1;padding:32px 0 0}
-  .release{margin-bottom:44px}
-  .release-cover{height:auto;aspect-ratio:1 / 1}
-  .release h3{font-size:1rem}
-  .album{padding:40px 0 60px}
-  .album-info li{grid-template-columns:1fr;gap:2px;padding:10px 0}
-}
-/* ====== ЛУЧШИЕ ОБЗОРЫ НА ГЛАВНОЙ ====== */
+/* ====== СЕТКА ЛУЧШИХ ОБЗОРОВ ====== */
 .picks{
   display:grid;
   grid-template-columns:repeat(3,1fr);
-  gap:28px;
+  gap:24px;
 }
 
-.pick{color:var(--text)}
+.pick{
+  display:flex;
+  flex-direction:column;
+}
 
 .pick-title{
-  font-size:.98rem;
-  font-weight:400;
+  font-size:.95rem;
+  font-weight:normal;
   line-height:1.35;
-  color:var(--accent);
-  margin:0 0 14px 0;
-  transition:color .2s;
+  margin:0 0 12px 0;
+  min-height:2.6em;
 }
-.pick:hover .pick-title{color:var(--text)}
+.pick-title a{
+  color:var(--text);
+}
 
 .pick-cover{
-  display:block;
   width:100%;
-  aspect-ratio:1 / 1;
+  aspect-ratio:1/1;
   object-fit:cover;
-  background:var(--bg-soft);
   border:1px solid var(--line);
-  transition:border-color .25s, filter .25s;
+  transition:border-color .25s;
 }
-.pick:hover .pick-cover{
+.pick a:hover .pick-cover{
   border-color:var(--accent);
-  filter:brightness(.85);
 }
 
-@media (max-width:900px){
-  .picks{grid-template-columns:repeat(2,1fr);gap:22px}
+/* ====== БЛОК КОНЦЕРТОВ ====== */
+.concert-block .section-heading{
+  font-family:'Courier New',monospace;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  margin:0 0 16px 0;
+  font-weight:normal;
 }
-@media (max-width:640px){
-  .picks{grid-template-columns:1fr}
+
+.concerts-list{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
-/* ====== ШАПКА ВНУТРЕННИХ СТРАНИЦ (расширенная) ====== */
+
+.concert-card{
+  position:relative;
+  display:block;
+  overflow:hidden;
+  min-height:92px;
+  padding:16px 18px;
+  border:1px solid var(--line);
+  transition:border-color .25s;
+}
+.concert-card:hover{opacity:1;}
+
+.concert-card::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background-image:var(--poster);
+  background-size:cover;
+  background-position:center;
+  opacity:0;
+  transform:scale(1.06);
+  transition:opacity .35s ease, transform .6s ease;
+  z-index:0;
+}
+
+.concert-card::after{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:linear-gradient(90deg,
+    rgba(13,12,11,.95) 0%,
+    rgba(13,12,11,.82) 60%,
+    rgba(13,12,11,.55) 100%);
+  opacity:0;
+  transition:opacity .35s ease;
+  z-index:1;
+}
+
+.concert-card:hover{border-color:var(--accent);}
+.concert-card:hover::before{opacity:.9;transform:scale(1);}
+.concert-card:hover::after{opacity:1;}
+
+.concert-inner{
+  position:relative;
+  z-index:2;
+}
+
+.concert-title{
+  margin:0 0 6px 0;
+  font-size:.9rem;
+  line-height:1.35;
+  color:var(--text);
+  transition:color .25s;
+}
+
+.concert-date{
+  margin:0;
+  font-family:'Courier New',monospace;
+  font-size:.68rem;
+  letter-spacing:.08em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+
+.concert-card:hover .concert-title{color:var(--accent);}
+
+.concert-more{
+  display:inline-block;
+  margin-top:16px;
+  font-family:'Courier New',monospace;
+  font-size:.7rem;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  border-bottom:1px solid var(--line);
+  padding-bottom:3px;
+  transition:color .2s, border-color .2s;
+}
+.concert-more:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+  opacity:1;
+}
+/* ====== ЖАНРОВЫЕ ХЕШТЕГИ ====== */
+.genres{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+}
+
+.genre{
+  display:inline-block;
+  padding:6px 14px;
+  border:1px solid var(--line);
+  font-family:'Courier New',monospace;
+  font-size:.7rem;
+  letter-spacing:.06em;
+  color:var(--text-dim);
+  transition:color .2s, border-color .2s;
+}
+a.genre:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+  opacity:1;
+}
+
+/* ====== РУБРИКИ (СЕТКА КАРТОЧЕК) ====== */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:20px;
+}
+
+.card{
+  padding:26px 24px;
+  border:1px solid var(--line);
+  background:var(--bg-soft);
+  transition:border-color .25s;
+}
+.card:hover{
+  border-color:var(--accent);
+}
+
+.card h3 a{
+  color:var(--text);
+}
+.card h3 a:hover{
+  color:var(--accent);
+  opacity:1;
+}
+
+.card p{
+  color:var(--text-dim);
+  font-size:.94rem;
+  margin:0;
+}
+
+/* ====== ЖУРНАЛ ====== */
+.zine{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:40px;
+  align-items:start;
+}
+
+.zine-note p{
+  color:var(--text-dim);
+}
+
+.zine-quote{
+  border-left:2px solid var(--accent);
+  padding:6px 0 6px 24px;
+  font-size:1.3rem;
+  font-style:italic;
+  line-height:1.45;
+}
+.zine-quote small{
+  display:block;
+  margin-top:14px;
+  font-family:'Courier New',monospace;
+  font-style:normal;
+  font-size:.68rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+
+/* ====== ССЫЛКИ / КНОПКИ ====== */
+.links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:14px;
+}
+
+.btn{
+  display:inline-block;
+  padding:12px 26px;
+  border:1px solid var(--accent);
+  font-family:'Courier New',monospace;
+  font-size:.72rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--accent);
+  transition:background .2s, color .2s;
+}
+.btn:hover{
+  background:var(--accent);
+  color:var(--bg);
+  opacity:1;
+}
+
+/* ====== ПОДВАЛ ====== */
+footer{
+  padding:52px 0 64px;
+  border-top:1px solid var(--line);
+  font-family:'Courier New',monospace;
+  font-size:.74rem;
+  letter-spacing:.06em;
+  color:var(--text-dim);
+}
+footer p{margin:0 0 10px 0;}
+footer p:last-child{margin-bottom:0;}
+footer a{color:var(--text-dim);}
+footer a:hover{color:var(--accent);opacity:1;}
+
+/* ====== ВЕРХНЯЯ ПАНЕЛЬ НАВИГАЦИИ ====== */
+.topbar{
+  border-bottom:1px solid var(--line);
+  padding:18px 0;
+}
+
 .topbar .wrap{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:20px;
-  flex-wrap:wrap;
+  gap:24px;
 }
+
 .topbar-brand{
-  color:var(--text);
-  letter-spacing:.22em;
-  font-weight:400;
+  font-family:'Courier New',monospace;
+  font-size:.78rem;
+  letter-spacing:.2em;
+  text-transform:uppercase;
+  color:var(--text-dim);
 }
-.topbar-brand:hover{color:var(--accent)}
+.topbar-brand:hover{color:var(--accent);opacity:1;}
+
 .topbar-links{
   display:flex;
-  gap:22px;
+  gap:28px;
 }
-.topbar-links a{color:var(--text-dim)}
-.topbar-links a:hover,
-.topbar-links a.is-active{color:var(--accent)}
 
-/* ====== ХЛЕБНЫЕ КРОШКИ ====== */
-.crumbs{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  align-items:center;
-  padding:22px 0 0;
+.topbar-links a{
+  font-family:'Courier New',monospace;
+  font-size:.72rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+.topbar-links a:hover{color:var(--accent);opacity:1;}
+
+/* ====== СТРАНИЦА АЛЬБОМА ====== */
+.album{
+  padding:64px 0;
+}
+
+.album-title{
+  font-size:2.4rem;
+  font-weight:normal;
+  line-height:1.15;
+  margin:0 0 14px 0;
+}
+.album-title span{color:var(--accent);}
+
+.album-date{
   font-family:'Courier New',monospace;
   font-size:.72rem;
   letter-spacing:.12em;
   text-transform:uppercase;
   color:var(--text-dim);
+  margin:0 0 48px 0;
 }
-.crumbs a{color:var(--text-dim)}
-.crumbs a:hover{color:var(--accent)}
-.crumbs span.sep{color:var(--line)}
-.crumbs span.current{color:var(--accent)}
 
-/* ====== КОНЦЕРТЫ ====== */
-.concert{
+.album-layout{
   display:grid;
-  grid-template-columns:100px 1fr auto;
-  gap:24px;
-  align-items:center;
-  padding:22px 0;
+  grid-template-columns:minmax(0,420px) 1fr;
+  gap:48px;
+  align-items:start;
+  margin-bottom:56px;
+}
+
+.album-cover{
+  width:100%;
+  border:1px solid var(--line);
+}
+
+.album-info{
+  margin:0;
+  padding:0;
+  list-style:none;
+}
+.album-info li{
+  display:flex;
+  justify-content:space-between;
+  gap:20px;
+  padding:12px 0;
   border-bottom:1px solid var(--line);
 }
-.concert-date{text-align:center;font-family:'Courier New',monospace}
-.concert-day{display:block;font-size:1.9rem;line-height:1;color:var(--text)}
-.concert-month{
-  display:block;
-  font-size:.66rem;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--text-dim);
-  margin-top:6px;
-}
-.concert h3{font-size:1.05rem;font-weight:400;margin-bottom:4px}
-.concert-place{color:var(--accent);font-size:.88rem;margin-bottom:4px}
-.concert-note{color:var(--text-dim);font-size:.88rem;margin:0}
-
-.empty{
-  padding:48px 0 56px;
-  color:var(--text-dim);
-  max-width:560px;
-}
-.empty p+p{margin-top:18px}
-
-@media (max-width:640px){
-  .concert{grid-template-columns:70px 1fr}
-  .concert-action{grid-column:1 / -1}
-  .topbar-links{gap:16px}
-}
-/* ====== BANDCAMP-ПЛЕЕР ====== */
-.album-player{
-  margin:40px 0 0 0;
-  padding-top:32px;
-  border-top:1px solid var(--line);
-}
-.album-player iframe{
-  display:block;
-  width:100%;
-  border:0;
-}
-
-.album-player-label{
+.album-info dt{
   font-family:'Courier New',monospace;
   font-size:.7rem;
-  letter-spacing:.16em;
+  letter-spacing:.12em;
   text-transform:uppercase;
   color:var(--text-dim);
-  margin:0 0 16px 0;
 }
-/* ====== ССЫЛКИ НА СООБЩЕСТВА ГРУПП ====== */
+.album-info dd{
+  margin:0;
+  text-align:right;
+}
+
+/* ====== ССЫЛКИ НА СООБЩЕСТВА (ИКОНКИ) ====== */
 .band-links{
   display:flex;
   flex-wrap:wrap;
@@ -540,127 +483,134 @@ footer p+p{margin-top:10px}
 .band-links a:hover{
   color:var(--accent);
   border-color:var(--accent);
+  opacity:1;
 }
 .band-links svg{
   width:19px;
   height:19px;
   fill:currentColor;
 }
-/* ====== ДВУХКОЛОНОЧНАЯ ГЛАВНАЯ ====== */
-.main-grid{
-  display:grid;
-  grid-template-columns:1fr 340px;
-  gap:48px;
-  align-items:start;
+
+/* ====== ТЕКСТ РЕЦЕНЗИИ ====== */
+.album-body{
+  max-width:740px;
 }
-@media (max-width:900px){
-  .main-grid{
-    grid-template-columns:1fr;
-    gap:40px;
-  }
+.album-body p{
+  margin:0 0 22px 0;
 }
 
-/* ====== БЛОК КОНЦЕРТОВ ====== */
-.concert-block{
-  position:sticky;
-  top:36px;
-}
-.concert-block .section-title{
-  margin:0 0 20px 0;
+/* ====== ПЛЕЕР ====== */
+.album-player{
+  margin:44px 0 0 0;
+  padding-top:32px;
+  border-top:1px solid var(--line);
 }
 
-.concerts-list{
-  display:flex;
-  flex-direction:column;
-  gap:12px;
+.album-player-label{
+  font-family:'Courier New',monospace;
+  font-size:.7rem;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  margin:0 0 16px 0;
 }
 
-.concert-card{
-  position:relative;
+.album-player iframe{
   display:block;
-  overflow:hidden;
-  min-height:96px;
-  padding:18px 20px;
-  border:1px solid var(--line);
-  background:var(--bg-soft);
-  transition:border-color .25s;
-  text-decoration:none;
+  width:100%;
+  border:0;
 }
 
-.concert-card::before{
-  content:"";
-  position:absolute;
-  inset:0;
-  background-image:var(--poster);
-  background-size:cover;
-  background-position:center;
-  opacity:0;
-  transform:scale(1.06);
-  transition:opacity .35s ease, transform .6s ease;
-  z-index:0;
+/* ====== ТЕГИ ====== */
+.tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:44px 0 0 0;
+  padding-top:28px;
+  border-top:1px solid var(--line);
 }
-
-.concert-card::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(90deg, rgba(13,12,11,.95) 0%, rgba(13,12,11,.8) 55%, rgba(13,12,11,.5) 100%);
-  opacity:0;
-  transition:opacity .35s ease;
-  z-index:1;
+.tags a{
+  font-family:'Courier New',monospace;
+  font-size:.7rem;
+  letter-spacing:.06em;
+  color:var(--text-dim);
+  border-bottom:1px solid transparent;
+  transition:color .2s, border-color .2s;
 }
-
-.concert-card:hover{
+.tags a:hover{
+  color:var(--accent);
   border-color:var(--accent);
-}
-.concert-card:hover::before{
-  opacity:.9;
-  transform:scale(1);
-}
-.concert-card:hover::after{
   opacity:1;
 }
 
-.concert-inner{
-  position:relative;
-  z-index:2;
+/* ====== НАЗАД ====== */
+.album-back{
+  margin:40px 0 0 0;
 }
-
-.concert-title{
-  margin:0 0 6px 0;
-  font-size:.95rem;
-  line-height:1.35;
-  color:var(--text);
-  transition:color .25s;
-}
-.concert-date{
-  margin:0;
+.back{
   font-family:'Courier New',monospace;
   font-size:.72rem;
-  letter-spacing:.08em;
+  letter-spacing:.12em;
   text-transform:uppercase;
-  color:var(--text-dim);
 }
 
-.concert-card:hover .concert-title{
-  color:var(--accent);
+/* ====== СПИСОК ОБЗОРОВ (releases.html) ====== */
+.release-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+  gap:28px;
 }
 
-/* ссылка «все концерты» */
-.concert-more{
-  display:inline-block;
-  margin-top:18px;
-  font-family:'Courier New',monospace;
-  font-size:.72rem;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  color:var(--text-dim);
-  text-decoration:none;
-  border-bottom:1px solid var(--line);
-  padding-bottom:3px;
-  transition:color .2s, border-color .2s;
+.release-card img{
+  width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border:1px solid var(--line);
 }
-.concert-more:hover{
-  color:var(--accent);
-  border-color:var(--accent);
+
+.release-card p{
+  margin:12px 0 0 0;
+  font-size:.92rem;
+  line-height:1.4;
+}
+
+/* ====== АДАПТИВ ====== */
+@media (max-width:1000px){
+  .top-layout{
+    grid-template-columns:1fr;
+    gap:44px;
+  }
+  .album-layout{
+    grid-template-columns:1fr;
+    gap:36px;
+  }
+  .zine{
+    grid-template-columns:1fr;
+    gap:32px;
+  }
+}
+
+@media (max-width:720px){
+  body{font-size:16px;}
+  .wrap{padding:0 20px;}
+  header{padding:44px 0 36px;}
+  h1{font-size:2.3rem;}
+  h2{font-size:1.35rem;margin-bottom:24px;}
+  main > section{padding:44px 0;}
+  .album-title{font-size:1.8rem;}
+  .picks{
+    grid-template-columns:repeat(2,1fr);
+    gap:16px;
+  }
+  .topbar .wrap{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:12px;
+  }
+}
+
+@media (max-width:480px){
+  .picks{grid-template-columns:1fr;}
+  h1{font-size:1.9rem;}
 }
