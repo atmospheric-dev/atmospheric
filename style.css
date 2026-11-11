@@ -500,3 +500,13 @@ footer p+p{margin-top:10px}
   .concert-action{grid-column:1 / -1}
   .topbar-links{gap:16px}
 }
+/* ====== BANDCAMP-ПЛЕЕР ====== */
+.album-player{
+  max-width:700px;
+  margin:0 0 40px 0;
+}
+.album-player iframe{
+  display:block;
+  width:100%;
+  border:0;
+}
