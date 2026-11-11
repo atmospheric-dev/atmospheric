@@ -614,3 +614,132 @@ footer a:hover{color:var(--accent);opacity:1;}
   .picks{grid-template-columns:1fr;}
   h1{font-size:1.9rem;}
 }
+/* ====== СТРАНИЦА «ОБЗОРЫ»: releases.html ====== */
+.page-head{
+  padding:56px 0 0;
+}
+.page-head h1{
+  font-size:2.8rem;
+  margin:0 0 14px 0;
+}
+.page-head p{
+  max-width:680px;
+  color:var(--text-dim);
+  margin:0;
+}
+
+/* сетка карточек обзоров */
+.releases{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:36px 28px;
+  padding:0 0 72px;
+}
+
+.release{
+  display:flex;
+  flex-direction:column;
+}
+
+.release-cover{
+  width:100%;
+  max-width:100%;
+  aspect-ratio:1/1;
+  object-fit:cover;
+  border:1px solid var(--line);
+  transition:border-color .25s;
+}
+.release a:hover .release-cover{
+  border-color:var(--accent);
+}
+
+.release h3{
+  font-size:1.05rem;
+  font-weight:normal;
+  line-height:1.35;
+  margin:16px 0 10px 0;
+}
+.release h3 a{
+  color:var(--text);
+}
+.release h3 a:hover{
+  color:var(--accent);
+  opacity:1;
+}
+
+.release-excerpt{
+  margin:0 0 14px 0;
+  font-size:.92rem;
+  line-height:1.55;
+  color:var(--text-dim);
+  /* обрезка длинного текста до 4 строк */
+  display:-webkit-box;
+  -webkit-line-clamp:4;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+/* теги внутри карточки обзора */
+.release-tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  margin-top:auto;
+}
+.release-tags a{
+  font-family:'Courier New',monospace;
+  font-size:.65rem;
+  letter-spacing:.05em;
+  color:var(--text-dim);
+  border-bottom:1px solid transparent;
+  transition:color .2s, border-color .2s;
+}
+.release-tags a:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+  opacity:1;
+}
+
+/* фильтр хештегов под заголовком */
+.page-head + .wrap .tags{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin:0;
+}
+.page-head + .wrap .tags a{
+  display:inline-block;
+  padding:6px 14px;
+  border:1px solid var(--line);
+  font-family:'Courier New',monospace;
+  font-size:.7rem;
+  letter-spacing:.06em;
+  color:var(--text-dim);
+  border-bottom:1px solid var(--line);
+  transition:color .2s, border-color .2s;
+}
+.page-head + .wrap .tags a:hover{
+  color:var(--accent);
+  border-color:var(--accent);
+  opacity:1;
+}
+.page-head + .wrap .tags a.is-active{
+  color:var(--accent);
+  border-color:var(--accent);
+}
+
+/* ====== АДАПТИВ ДЛЯ ОБЗОРОВ ====== */
+@media (max-width:900px){
+  .releases{
+    grid-template-columns:repeat(2,1fr);
+    gap:28px 20px;
+  }
+}
+@media (max-width:560px){
+  .releases{
+    grid-template-columns:1fr;
+  }
+  .page-head h1{
+    font-size:2rem;
+  }
+}
