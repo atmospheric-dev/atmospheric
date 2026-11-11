@@ -4,180 +4,101 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Atmospheric — сообщество о тяжёлой и тёмной музыке</title>
-<meta name="description" content="Atmospheric — сообщество и блог о блэк-метале, сладже, пост- и дум-метале, дарк-фолке и дарк-эмбиенте. Обзоры релизов, заметки с концертов, подборки и печатный журнал.">
 <meta name="theme-color" content="#0d0c0b">
-
-<!-- ===== ИКОНКА ВКЛАДКИ ===== -->
-<link rel="icon" type="image/png" sizes="512x512" href="favicon-simple.png?v=3">
-<link rel="shortcut icon" type="image/png" href="favicon-simple.png?v=3">
-<link rel="apple-touch-icon" href="favicon-simple.png?v=3">
-
-<!-- ===== ОБЩИЕ СТИЛИ (файл style.css рядом с index.html) ===== -->
+<link rel="icon" type="image/png" href="favicon-simple.png?v=3">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- ===== ШАПКА ===== -->
-<header>
+<nav class="topbar">
   <div class="wrap">
-    <img class="logo" src="logo.png" alt="Atmospheric — логотип">
-    <p class="kicker">сообщество · блог · zine</p>
+    <a class="topbar-brand" href="index.html">Atmospheric</a>
+    <div class="topbar-links">
+      <a href="releases.html">Обзоры</a>
+      <a href="concerts.html">Концерты</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
     <h1>Atmospheric</h1>
-    <p class="lead">
-      Сообщество и блог о тяжёлой и тёмной музыке: блэк-метал, сладж,
-      пост- и дум-метал, дарк-фолк, дарк-эмбиент, данжен-синт и близкие жанры.
-    </p>
+    <p class="hero-sub">Сообщество о тяжёлой и тёмной музыке</p>
   </div>
 </header>
 
-<main>
-   <!-- ===== ЛУЧШИЕ ОБЗОРЫ ===== -->
-  <section>
-    <div class="wrap">
-      <h2>Выбор редакции</h2>
+<main class="wrap main-grid">
 
-      <div class="picks">
+  <!-- ЛЕВАЯ КОЛОНКА: ОБЗОРЫ -->
+  <div>
 
-        <div class="pick">
-          <h3 class="pick-title"><a href="album-gate-sigil.html">Gåte — Sigil (2026)</a></h3>
-          <a href="album-gate-sigil.html">
-            <img class="pick-cover" src="covers/gate.jpg" alt="Gåte — Sigil">
-          </a>
-        </div>
+    <h2 class="section-title">Лучшие обзоры</h2>
 
-        <div class="pick">
-          <h3 class="pick-title"><a href="album-olshanoe-kraevedenie.html">Olshanoe — Краеведение (2026)</a></h3>
-          <a href="album-olshanoe-kraevedenie.html">
-            <img class="pick-cover" src="covers/olshanoe.jpg" alt="Olshanoe — Краеведение">
-          </a>
-        </div>
+    <div class="featured-grid">
 
-        <div class="pick">
-          <h3 class="pick-title"><a href="album-ranova-izluchina.html">Ранова — Излучина (2026)</a></h3>
-          <a href="album-ranova-izluchina.html">
-            <img class="pick-cover" src="covers/ranova.jpg" alt="Ранова — Излучина">
-          </a>
-        </div>
+      <a class="featured-card" href="album-olshanoe-kraevedenie.html">
+        <img class="featured-cover" src="covers/olshanoe.jpg" alt="Olshanoe — Краеведение">
+        <p class="featured-title">Olshanoe — Краеведение</p>
+      </a>
 
-      </div>
+      <a class="featured-card" href="album-ranova-izluchina.html">
+        <img class="featured-cover" src="covers/ranova.jpg" alt="Ранова — Излучина">
+        <p class="featured-title">Ранова — Излучина</p>
+      </a>
 
-      <p style="margin-top:28px;font-family:'Courier New',monospace;font-size:.7rem;letter-spacing:.08em;color:var(--text-dim)">
-        Три лучших обзора за последнее время. Обновлено 11 ноября 2026.
-      </p>
+      <a class="featured-card" href="album-gate-sigil.html">
+        <img class="featured-cover" src="covers/gate.jpg" alt="Gåte — Sigil">
+        <p class="featured-title">Gåte — Sigil</p>
+      </a>
 
-      <p style="margin-top:20px">
-        <a class="back" href="releases.html">Все обзоры →</a>
-      </p>
     </div>
-  </section>
-  <!-- ===== О НАС ===== -->
-  <section>
-    <div class="wrap">
-      <h2>О нас</h2>
-      <p style="max-width:680px">
-        Мы публикуем обзоры релизов, заметки с концертов, тематические подборки
-        и материалы о жанрах, до которых добираемся сами — со всеми сомнениями
-        и без готовых списков. Отдельное направление — наш печатный журнал
-        с неописуемым типографским запахом.
-      </p>
 
-      <div class="genres" style="margin-top:32px">
-        <a class="genre" href="tag-atmospheric-black-metal.html">atmospheric black-metal</a>
-        <a class="genre" href="tag-post-black-metal.html">post-black metal</a>
-        <a class="genre" href="tag-dark-folk.html">dark folk</a>
-        <a class="genre" href="tag-folk-rock.html">folk rock</a>
-        <a class="genre" href="tag-electronic.html">electronic</a>
-        <span class="genre">сладж</span>
-        <span class="genre">пост-метал</span>
-        <span class="genre">дум-метал</span>
-        <span class="genre">дарк-эмбиент</span>
-        <span class="genre">данжен-синт</span>
-      </div>
+    <p class="featured-note">
+      Три лучших обзора за последнее время. Обновлено 11 ноября 2026.
+    </p>
+
+  </div>
+
+  <!-- ПРАВАЯ КОЛОНКА: КОНЦЕРТЫ -->
+  <aside class="concert-block">
+    <h2 class="section-title">Ближайшие концерты</h2>
+
+    <div class="concerts-list">
+
+      <a class="concert-card" href="ССЫЛКА"
+         style="--poster:url('covers/posters/poster-1.jpg')">
+        <div class="concert-inner">
+          <p class="concert-title">Название концерта — исполнитель</p>
+          <p class="concert-date">16 ноября 2026</p>
+        </div>
+      </a>
+
+      <a class="concert-card" href="ССЫЛКА"
+         style="--poster:url('covers/posters/poster-2.jpg')">
+        <div class="concert-inner">
+          <p class="concert-title">Название концерта — исполнитель</p>
+          <p class="concert-date">22 ноября 2026</p>
+        </div>
+      </a>
+
+      <a class="concert-card" href="ССЫЛКА"
+         style="--poster:url('covers/posters/poster-3.jpg')">
+        <div class="concert-inner">
+          <p class="concert-title">Название концерта — исполнитель</p>
+          <p class="concert-date">29 ноября 2026</p>
+        </div>
+      </a>
+
     </div>
-  </section>
 
-  <!-- ===== РУБРИКИ ===== -->
-  <section>
-    <div class="wrap">
-      <h2>Что публикуем</h2>
-      <div class="grid">
-
-        <div class="card">
-          <h3><a href="releases.html">Обзоры релизов</a></h3>
-          <p>Новые записи и то, что прошло мимо. Слушаем сами, пишем о том,
-             что зацепило — и о том, что нет.</p>
-        </div>
-
-        <div class="card">
-          <h3>Заметки с концертов</h3>
-          <p>То, что остаётся после живого звука: зал, свет, воздух
-             и пара нетипичных деталей.</p>
-        </div>
-
-        <div class="card">
-          <h3>Подборки</h3>
-          <p>Тематические списки — сезонные и не только. Собраны по смыслу,
-             а не по количеству прослушиваний.</p>
-        </div>
-
-        <div class="card">
-          <h3>Материалы о жанрах</h3>
-          <p>Разбираем направления, в которых разбираться ещё не успели.
-             Отделяем проверенное от предположений.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ЖУРНАЛ ===== -->
-  <section>
-    <div class="wrap">
-      <h2>Печатный журнал</h2>
-      <div class="zine">
-        <div class="zine-note">
-          <p>
-            Zine — это не приложение к сайту, это отдельная история.
-            Бумага, типографская краска, переплёт и то самое ощущение,
-            когда журнал только что из коробки.
-          </p>
-          <p style="margin-top:18px">
-            Анонсы выпусков и способов получить экземпляр — в сообществе.
-          </p>
-        </div>
-        <div class="zine-quote">
-          «Неописуемый типографский запах»
-          <small>о нашем журнале</small>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ССЫЛКИ ===== -->
-  <section>
-    <div class="wrap">
-      <h2>Где мы</h2>
-      <div class="links">
-        <a class="btn" href="https://t.me/atmospheric_zine" target="_blank" rel="noopener">Telegram</a>
-        <a class="btn" href="https://vk.ru/atmospheric_zine" target="_blank" rel="noopener">ВКонтакте</a>
-      </div>
-      <p style="margin-top:26px;color:var(--text-dim);font-size:.9rem">
-        Все анонсы, заметки и новости о выпусках журнала — в Telegram-канале.
-      </p>
-    </div>
-  </section>
+    <a class="concert-more" href="concerts.html">Все концерты →</a>
+  </aside>
 
 </main>
 
-<!-- ===== ПОДВАЛ ===== -->
 <footer>
   <div class="wrap">
     <p>Atmospheric — сообщество о тяжёлой и тёмной музыке</p>
-    <p>
-      <a href="https://t.me/atmospheric_zine" target="_blank" rel="noopener">t.me/atmospheric_zine</a>
-      &nbsp;·&nbsp;
-      <a href="https://vk.ru/atmospheric_zine" target="_blank" rel="noopener">vk.ru/atmospheric_zine</a>
-    </p>
   </div>
 </footer>
 
