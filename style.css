@@ -425,3 +425,78 @@ footer p+p{margin-top:10px}
 @media (max-width:640px){
   .picks{grid-template-columns:1fr}
 }
+/* ====== ШАПКА ВНУТРЕННИХ СТРАНИЦ (расширенная) ====== */
+.topbar .wrap{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+  flex-wrap:wrap;
+}
+.topbar-brand{
+  color:var(--text);
+  letter-spacing:.22em;
+  font-weight:400;
+}
+.topbar-brand:hover{color:var(--accent)}
+.topbar-links{
+  display:flex;
+  gap:22px;
+}
+.topbar-links a{color:var(--text-dim)}
+.topbar-links a:hover,
+.topbar-links a.is-active{color:var(--accent)}
+
+/* ====== ХЛЕБНЫЕ КРОШКИ ====== */
+.crumbs{
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+  align-items:center;
+  padding:22px 0 0;
+  font-family:'Courier New',monospace;
+  font-size:.72rem;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+}
+.crumbs a{color:var(--text-dim)}
+.crumbs a:hover{color:var(--accent)}
+.crumbs span.sep{color:var(--line)}
+.crumbs span.current{color:var(--accent)}
+
+/* ====== КОНЦЕРТЫ ====== */
+.concert{
+  display:grid;
+  grid-template-columns:100px 1fr auto;
+  gap:24px;
+  align-items:center;
+  padding:22px 0;
+  border-bottom:1px solid var(--line);
+}
+.concert-date{text-align:center;font-family:'Courier New',monospace}
+.concert-day{display:block;font-size:1.9rem;line-height:1;color:var(--text)}
+.concert-month{
+  display:block;
+  font-size:.66rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--text-dim);
+  margin-top:6px;
+}
+.concert h3{font-size:1.05rem;font-weight:400;margin-bottom:4px}
+.concert-place{color:var(--accent);font-size:.88rem;margin-bottom:4px}
+.concert-note{color:var(--text-dim);font-size:.88rem;margin:0}
+
+.empty{
+  padding:48px 0 56px;
+  color:var(--text-dim);
+  max-width:560px;
+}
+.empty p+p{margin-top:18px}
+
+@media (max-width:640px){
+  .concert{grid-template-columns:70px 1fr}
+  .concert-action{grid-column:1 / -1}
+  .topbar-links{gap:16px}
+}
